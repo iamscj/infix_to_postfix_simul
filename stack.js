@@ -54,7 +54,7 @@ function outputMessage(message) {
 	p.classList.add('meta');
 	p.innerText = message;
 	div.appendChild(p);
-	$(".stack").append(div)
+	document.querySelector('.stack').appendChild(div);
 	},time);
 	console.log(time);
 	time+=2000;
