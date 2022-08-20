@@ -54,6 +54,7 @@ function outputMessage(message) {
 	p.classList.add('meta');
 	p.innerText = message;
 	div.appendChild(p);
+	// $(".stack").append(div)
 	document.querySelector('.stack').appendChild(div);
 	},time);
 	console.log(time);
@@ -141,7 +142,7 @@ function pop(i) {
 		if(popped_ele!='(')
 			p.innerText = popped_ele;
 		div1.appendChild(p);
-		$(".stack1").append(div1);
+		document.querySelector('.stack1').appendChild(div1);
 
 		topp--;
 		// console.log(popped_ele)
