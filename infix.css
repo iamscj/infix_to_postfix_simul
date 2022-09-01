@@ -1,9 +1,10 @@
 body {
-	background-color: #fff0c3;
+	background-color: white;
+	justify-content: center;
 }
 
 .container-fluid {
-	background-color: #6f459e;
+	background-color: rgb(25, 204, 40);
 	justify-content: center;
 }
 
@@ -54,11 +55,12 @@ body {
 	border: 2px solid white;
 	border-radius: 18px;
 	margin-top: 2vw;
+	background-color: rgb(25, 204, 40);
 }
 
 .btn1 {
 	border: wheat;
-	background-color: #6f459e;
+	background-color: green;
 	text-align: center;
 	color: white;
 	font-weight: 500;
@@ -69,7 +71,7 @@ body {
 }
 
 button:hover {
-	background-color: #c694ff;
+	background-color: darkgreen;
 }
 
 input:focus {
@@ -85,7 +87,7 @@ input:focus {
 	width: 20%;
 	margin: auto;
 	padding: 10px;
-	background-color: red;
+	background-color: rgb(25, 204, 40);
 	border-radius: 5px;
 	font-size: 2rem;
 	font-weight: bold;
@@ -98,7 +100,7 @@ input:focus {
 	width: 20%;
 	margin: auto;
 	padding: 10px;
-	background-color: red;
+	background-color: rgb(25, 204, 40);
 	border-radius: 5px;
 	font-size: 2rem;
 	font-weight: bold;
@@ -107,7 +109,27 @@ input:focus {
 	animation-delay: 5s;
 }
 .message{
-	background-color: #6f459e;
+	background-color: #9df77c;
 	text-align: center;
 
+}
+
+.centre{
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: rgb(25, 204, 40);
+}
+
+.inputdata{
+	margin-top: 0;
+	padding-top: 2vmax;
+}
+
+.section-heading{
+	text-decoration: underline;
 }
