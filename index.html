@@ -13,7 +13,7 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <!-- Infix to Postfix & Prefix Converter title added -->
-    <title>Infix to Postfix & Prefix Converter</title>
+    <title>Arithematic Expression Evaluation</title>
 
     <!-- link style.css file -->
     <link href="infix.css" rel="stylesheet">
@@ -23,10 +23,56 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid" style="justify-content: center;">
             <span class="navbar-brand mb-0 h1">
-                Infix to Postfix Converter in JavaScript
+                Arithematic Expression Evaluation
             </span>
         </div>
     </nav>
+
+    <h1 class="section-heading centre">About Stacks</h1>
+
+    <p class="centre">
+        <b>
+            <font size="4"><a
+                    href="https://practice.geeksforgeeks.org/courses/dsa-self-paced?utm_source=Google&amp;utm_medium=Header+Link+Click&amp;utm_campaign=DSA+Course+Tracker&amp;utm_id=DSA-Course-Tracker&amp;utm_term=DSA+Course+Promo&amp;utm_content=Course+Page"
+                    rel="noopener" target="_blank">Data Structure and Algorithms Course</a></font>
+        </b><br>
+        <b>
+            <font size="4"><a
+                    href="https://practice.geeksforgeeks.org/explore/?category%5B%5D=Stack&amp;page=1&amp;category%5B%5D=Stack"
+                    rel="noopener" target="_blank">Practice Problems on Stack</a></font>
+        </b><br>
+        <b>
+            <font size="4"><a href="https://www.geeksforgeeks.org/category/stack/"
+                    target="https://www.geeksforgeeks.org/category/stack/">Recent articles on Stack</a></font>
+        </b>
+    </p>
+
+    <p class="centre">Stack is a linear data structure which follows a particular order in which the operations are performed. The
+        order may be LIFO(Last In First Out) or FILO(First In Last Out).</p>
+
+    <p class="centre"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-660x566.png"
+            srcset="https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack.png 702w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-100x86.png 100w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-200x172.png 200w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-300x257.png 300w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-660x566.png 660w"
+            sizes="100vw" width="660"></p>
+
+    <p class="centre">There are many real-life examples of a stack. Consider an example of plates stacked over one another in the
+        canteen. The plate which is at the top is the first one to be removed, i.e. the plate which has been placed at
+        the bottommost position remains in the stack for the longest period of time. So, it can be simply seen to follow
+        LIFO(Last In First Out)/FILO(First In Last Out) order.</p>
+
+    <h2 style="text-align:justify"><u>Basic Operations on Stack</u></h2>
+    <p style="text-align:justify">In order to make manipulations in a stack, there are certain operations provided to
+        us.</p>
+
+    <ul>
+        <li style="text-align:justify"><strong>push()</strong> to insert an element into the stack</li>
+        <li style="text-align:justify"><strong>pop() </strong>to remove an element from the stack</li>
+        <li style="text-align:justify"><strong>top()</strong> Returns the top element of the stack.</li>
+        <li style="text-align:justify"><strong>isEmpty() </strong>returns true is stack is empty else false</li>
+        <li style="text-align:justify"><strong>size()</strong> returns the size of stack</li>
+    </ul>
+
+    <h1 class="section-heading centre">Visual Representation of how Expressions Are Converted</h1>
+
     <div class="inputdata">
 
         <!-- Taking infix expression as input -->
@@ -55,6 +101,36 @@
     <div id="stack" class="stack"></div>
     <h2 style="text-align: center;">Order of Operators</h2>
     <div id="stack1" class="stack1"></div>
+
+
+
+    <h2 style="text-align:justify"><strong><u>Applications of the stack:</u></strong></h2>
+    <ul>
+        <li><a href="https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/">Infix to Postfix</a> /Prefix
+            conversion</li>
+        <li>Redo-undo features at many places like editors, photoshop.</li>
+        <li>Forward and backward features in web browsers</li>
+        <li>Used in many algorithms like <a href="https://www.geeksforgeeks.org/recursive-functions/">Tower of Hanoi,
+            </a><a href="https://www.geeksforgeeks.org/618/">tree traversals</a>, <a
+                href="https://www.geeksforgeeks.org/the-stock-span-problem/">stock span problems</a>, and <a
+                href="https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/">histogram
+                problems</a>.</li>
+        <li>Backtracking is one of the algorithm designing techniques. Some examples of backtracking are the Knight-Tour
+            problem, N-Queen problem, find your way through a maze, and game-like chess or checkers in all these
+            problems we dive into someway if that way is not efficient we come back to the previous state and go into
+            some another path. To get back from a current state we need to store the previous state for that purpose we
+            need a stack.</li>
+        <li>In Graph Algorithms like <a href="https://www.geeksforgeeks.org/topological-sorting/">Topological
+                Sorting</a> and <a href="https://www.geeksforgeeks.org/strongly-connected-components/">Strongly
+                Connected Components</a></li>
+        <li>In Memory management, any modern computer uses a stack as the primary management for a running purpose. Each
+            program that is running in a computer system has its own memory allocations</li>
+        <li>String reversal is also another application of stack. Here one by one each character gets inserted into the
+            stack. So the first character of the string is on the bottom of the stack and the last element of a string
+            is on the top of the stack. After Performing the pop operations on the stack we get a string in reverse
+            order.</li>
+    </ul>
+
 </body>
 
 </html>
