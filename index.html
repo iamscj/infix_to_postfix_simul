@@ -5,7 +5,7 @@
 
     <!-- link script.js file -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="stack.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     <title>Arithematic Expression Evaluation</title>
 
     <!-- link style.css file -->
-    <link href="infix.css" rel="stylesheet">
+    <link href="full.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,14 +47,16 @@
         </b>
     </p>
 
-    <p class="centre">Stack is a linear data structure which follows a particular order in which the operations are performed. The
+    <p class="centre">Stack is a linear data structure which follows a particular order in which the operations are
+        performed. The
         order may be LIFO(Last In First Out) or FILO(First In Last Out).</p>
 
     <p class="centre"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-660x566.png"
             srcset="https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack.png 702w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-100x86.png 100w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-200x172.png 200w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-300x257.png 300w, https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-660x566.png 660w"
             sizes="100vw" width="660"></p>
 
-    <p class="centre">There are many real-life examples of a stack. Consider an example of plates stacked over one another in the
+    <p class="centre">There are many real-life examples of a stack. Consider an example of plates stacked over one
+        another in the
         canteen. The plate which is at the top is the first one to be removed, i.e. the plate which has been placed at
         the bottommost position remains in the stack for the longest period of time. So, it can be simply seen to follow
         LIFO(Last In First Out)/FILO(First In Last Out) order.</p>
@@ -73,34 +75,104 @@
 
     <h1 class="section-heading centre">Visual Representation of how Expressions Are Converted</h1>
 
-    <div class="inputdata">
+    <div class="options centre">
+        <span>1) Infix to Postfix</span>
+        <button onclick="InfixtoPostfixon()" class="btn2">
+            Try</button>
+<br>
+        <span>2) Infix to Prefix</span>
+        <button onclick="InfixtoPrefixon()" class="btn2">
+            Try</button>
+<br>
+        <span>3) Postfix evaluationx</span>
+        <button onclick="postfixevalon()" class="btn2">
+            Try</button>
 
-        <!-- Taking infix expression as input -->
-        <span class="span1">
-            Enter Valid Infix Expression
-        </span>
-        <br>
-        <input type="text" value="(A/(B-C+D))*(E-A)*C" placeholder="Infix Expression" id="infixvalue" class="input1">
-        <br>
-
-        <!-- InfixtoPostfix() function call-->
-        <button onclick="InfixtoPostfix()" class="btn1">
-            Convert</button>
+        <!-- <span>1) Infix to Postfix</span>
+        <button onclick="InfixtoPostfixon()" class="btn2">
+            Try</button> -->
     </div>
+
+    <div class="infixtopost">
+        <div class="inputdata">
+
+            <!-- Taking infix expression as input -->
+            <span class="span1">
+                Enter Valid Infix Expression
+            </span>
+            <br>
+            <input type="text" value="(A/(B-C+D))*(E-A)*C" placeholder="Infix Expression" id="infixvalue"
+                class="input1">
+            <br>
+
+            <!-- InfixtoPostfix() function call-->
+            <button onclick="InfixtoPostfix()" class="btn1">
+                Convert</button>
+        </div>
+    </div>
+    <div class="infixtopre">
+        <div class="inputdata">
+
+            <!-- Taking infix expression as input -->
+            <span class="span1">
+                Enter Valid Infix Expression
+            </span>
+            <br>
+            <input type="text" value="(A/(B-C+D))*(E-A)*C" placeholder="Infix Expression" id="infixvalue2"
+                class="input1">
+            <br>
+
+            <!-- InfixtoPostfix() function call-->
+            <button onclick="InfixtoPrefix()" class="btn1">
+                Convert</button>
+        </div>
+        <p class="centre">There the string is traversed in opposite direction</p>
+    </div>
+
+    <div class="postfixeval">
+        <div class="inputdata">
+
+            <!-- Taking infix expression as input -->
+            <span class="span1">
+                Enter Valid Postfix Expression
+            </span>
+            <br>
+            <input type="text" value="12+3*" placeholder="Infix Expression" id="infixvalue3"
+                class="input1">
+            <br>
+
+            <!-- InfixtoPostfix() function call-->
+            <button onclick="postfixeval()" class="btn1">
+                Convert</button>
+        </div>
+        <p class="centre">Whenever a Operator occurs 2 operands are popped and evaluated</p>
+    </div>
+
     <br>
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="output">
 
         <!-- Postfix expression printed -->
         <span style="font-size:1.4vw; font-size: 2.2vw;">
-            Postfix Expression:-
+            Answer:-
             <span id="text" style="color: black; font-weight: 600;">
             </span>
         </span>
+        <p class="centre">Stack Trace</p>
+        <div id="stack" class="stack"></div>
     </div>
 
-    <div id="stack" class="stack"></div>
-    <h2 style="text-align: center;">Order of Operators</h2>
-    <div id="stack1" class="stack1"></div>
 
 
 
