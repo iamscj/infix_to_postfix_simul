@@ -1,282 +1,281 @@
-// Created an empty array
+var audio = new Audio('audio1.mp3');
+var audio1= new Audio('audio2.mp3');
+
 ssize = 0
 var stackarr = [];
 var z = -1;
-// Variable topp initialized with -1
 var topp = -1;
-var delayInMilliseconds = 1000;
-var time=500
-// setInterval(outputMessage, 1000)
+var delayInMilliseconds = 2000;
+var time = 2500
 function outputMessage(message) {
-	// const div = document.createElement('div');
-	// div.classList.add('message');
-	// // div.setAttribute('id', `${topp}`);
-	// const p = document.createElement('p');
-	// p.classList.add('meta');
-	// p.innerText = message;
-	// div.appendChild(p);
-	// const para = document.createElement('p');
-	// para.classList.add('text');
-	// for (var i = 0; i < 100000; i++) {
-	//     setTimeout(function(){
-	//         document.querySelector('.stack').appendChild(div);
-	//     }, 10000000 * i);
-	// }
-	// setTimeout(()=>{
-	// myInterval =	setInterval(displayHello, 3000);
-	// for(var k=0;k<10000;k++){
-	// 	for (let ct = 0; ct < 1000000; ct++) {
-			
-	// 	}
-	// }
-	// for(let j=1000;j<100000;j)
-	// {
-	// 	setTimeout(()=>{$(".stack").append(div);},i);
-	// 	// time+=250;
-	// }
-	// function displayHello() {
-		// $(".stack").append(div);
-		// document.querySelector('.stack').appendChild(div).delay(800);
-	// }
-	
-	// clearInterval(myInterval);
-
-	// console.log(list)
-	// }, 1000 * 1);
-	// console.log($('#stack').children().size())
-	
-	for(var i=0;i<1;i++){
-	setTimeout(()=>{
-		const div = document.createElement('div');
-	div.classList.add('message');
-	// div.setAttribute('id', `${topp}`);
-	const p = document.createElement('p');
-	p.classList.add('meta');
-	p.innerText = message;
-	div.appendChild(p);
-	// $(".stack").append(div)
-	document.querySelector('.stack').appendChild(div);
-	},time);
-	console.log(time);
-	time+=2000;
-}
+    
+    for (var i = 0; i < 1; i++) {
+        setTimeout(() => {
+            const div = document.createElement('div');
+            div.classList.add('message');
+            const p = document.createElement('p');
+            p.classList.add('meta');
+            p.innerText = message;
+            div.appendChild(p);
+            audio.play();
+            document.querySelector('.stack').appendChild(div);
+        }, time);
+        console.log(time);
+        time += 2500;
+    }
 }
 
 function popping(topp) {
-	// 	if(topp!=-1){
-	// 	console.log(topp);
-	// 	const element = document.getElementById(`${topp}`);
-	// element.remove();
-	//}
-	
-	// console.log()
-	// const list = document.getElementById("stack");
-	// const a=list.lastElementChild;
-	// console.log(a)
-	// a.style.background="gray"
-	// list.removeChild(list.lastElementChild);
+    
+    for (var i = 0; i < 1; i++) {
+        setTimeout(() => {
+            const list = document.getElementById("stack");
+            const a = list.lastElementChild;
+            list.removeChild(list.lastElementChild);
+            audio1.play();
+        }, time);
+        console.log(time);
+        time += 2500;
 
-	
-	// console.log(list.innerHTML);	
-
-	// console.log("hi")
-	// var element = document.getElementById(`${ssize--}`);
-	// // console.log(element)
-	// if (element != null) {
-	// 	// setTimeout(()=>{
-	// 	element.style.display = "none"
-	// 	// }, 1000 * 1);
-	// $(".stack").slideUp( 300 ).delay( 2000 ).fadeIn( 1000 )
-	// }
-	// 	element.remove();	
-	for(var i=0;i<1;i++){
-		setTimeout(()=>{
-			const list = document.getElementById("stack");
-	const a=list.lastElementChild;
-	list.removeChild(list.lastElementChild);
-		},time);
-		console.log(time);
-		time+=2000;
-	
+    }
 }
-}
-// Push function for pushing
-// elements inside stack
 function push(e) {
-	// for(var i=0;i<1000;i++)
-	// {
-	// 	for(var j=0;j<1000;j++)
-	// 	{
-	// 		for(var k=0;k<1000;k++)
-	// 		{
-
-	// 		}
-	// 	}
-	// }
-	topp++;
-	stackarr[topp] = e;
-	// if(!(e==='@'))
-	// console.log(e)
-	// setTimeout(() => {
-	// }, 1000 * 3);
-	outputMessage(e);
-
-
-
+    topp++;
+    stackarr[topp] = e;
+    outputMessage(e);
 
 }
-var idx=0;
-// Pop function for returning top element
+var idx = 0;
 function pop(i) {
-	// console.log("Hello")
-	if (topp == -1)
-		return 0;
-	else {
-		var popped_ele = stackarr[topp];
-		popping(topp);
-		const div1 = document.createElement('div');
-		div1.classList.add('message');
-		const p = document.createElement('p');
-		p.classList.add('meta');
-		
-		if(popped_ele!='(')
-			p.innerText = popped_ele;
-		div1.appendChild(p);
-		document.querySelector('.stack1').appendChild(div1);
+    if (topp == -1)
+        return 0;
+    else {
+        var popped_ele = stackarr[topp];
+        popping(topp);
 
-		topp--;
-		// console.log(popped_ele)
-		return popped_ele;
-	}
+        topp--;
+        return popped_ele;
+    }
 }
 
-// Function to check whether the passed
-// character is operator or not
 function operator(op) {
-	if (op == '+' || op == '-' ||
-		op == '^' || op == '*' ||
-		op == '/' || op == '(' ||
-		op == ')') {
-		return true;
-	}
-	else
-		return false;
+    if (op == '+' || op == '-' ||
+        op == '^' || op == '*' ||
+        op == '/' || op == '(' ||
+        op == ')') {
+        return true;
+    }
+    else
+        return false;
 }
 
-// Function to return the precedency of operator
 function precedency(pre) {
-	if (pre == '@' || pre == '(' || pre == ')') {
-		return 1;
-	}
-	else if (pre == '+' || pre == '-') {
-		return 2;
-	}
-	else if (pre == '/' || pre == '*') {
-		return 3;
-	}
-	else if (pre == '^') {
-		return 4;
-	}
-	else
-		return 0;
+    if (pre == '@' || pre == '(' || pre == ')') {
+        return 1;
+    }
+    else if (pre == '+' || pre == '-') {
+        return 2;
+    }
+    else if (pre == '/' || pre == '*') {
+        return 3;
+    }
+    else if (pre == '^') {
+        return 4;
+    }
+    else
+        return 0;
 }
 
-// Function to convert Infix to Postfix
 
 function InfixtoPostfix() {
 
-	// Postfix array created
-	var postfix = [];
-	var temp = 0;
-	push('@');
-	// console.log(list)
-	infixval = document.getElementById("infixvalue").value;
-	var code, i, len;
+    var postfix = [];
+    var temp = 0;
+    push('@');
+    infixval = document.getElementById("infixvalue").value;
+    var code, i, len;
 
-	for (i = 0, len = infixval.length; i < len; i++) {
-		code = infixval.charCodeAt(i);
-		
-		console.log(infixval[i], code)
-		if ((!(code > 47 && code < 58) && // numeric (0-9)
-			!(code > 64 && code < 91) && // upper alpha (A-Z)
-			!(code > 96 && code < 123) && !infixval[i] == ')')) { // lower alpha (a-z)
-			ssize = ssize + 1;
-			// console.log(str[i])
+    for (i = 0, len = infixval.length; i < len; i++) {
+        code = infixval.charCodeAt(i);
 
-		}
-	}
+        console.log(infixval[i], code)
+        if ((!(code > 47 && code < 58) && // numeric (0-9)
+            !(code > 64 && code < 91) && // upper alpha (A-Z)
+            !(code > 96 && code < 123) && !infixval[i] == ')')) { // lower alpha (a-z)
+            ssize = ssize + 1;
 
-	console.log(ssize)
-	// Iterate on infix string
-	for (var i = 0; i < infixval.length; i++) {
-	// $(".stack").slideUp( 300 ).delay( 200 ).fadeIn( 1000 )
+        }
+    }
 
-		// console.log(topp)
-		idx++;
-		var el = infixval[i];
-		// Checking whether operator or not
-		if (operator(el)) {
-			if (el == ')') {
-				while (stackarr[topp] != "(") {
-					// popping();
-					postfix[temp++] = pop(i);
-					// const list = document.getElementById("stack");
-					// const a=list.lastElementChild;
-					// console.log(a)
-					// a.style.background="gray"
-				}
-				// popping();
-				pop(i);
-			}
+    console.log(ssize)
+    for (var i = 0; i < infixval.length; i++) {
+        idx++;
+        var el = infixval[i];
+        if (operator(el)) {
+            if (el == ')') {
+                while (stackarr[topp] != "(") {
+                    postfix[temp++] = pop(i);
+                }
+                pop(i);
+            }
+            else if (el == '(') {
+                push(el);
+            }
+            else if (precedency(el) > precedency(stackarr[topp])) {
+                push(el);
+            }
+            else {
+                while (precedency(el) <=
+                    precedency(stackarr[topp]) && topp > -1) {
+                    postfix[temp++] = pop(i);
+                }
+                push(el);
+            }
+        }
+        else {
+            postfix[temp++] = el;
+        }
+    }
+    while (stackarr[topp] != '@') {
+        postfix[temp++] = pop(i);
+    }
 
-			// Checking whether el is ( or not
-			else if (el == '(') {
-				push(el);
-			}
+    var st = "";
+    for (var i = 0; i < postfix.length; i++)
+        st += postfix[i];
 
-			// Comparing precedency of el and
-			// stackarr[topp]
-			else if (precedency(el) > precedency(stackarr[topp])) {
-				push(el);
-			}
-			else {
-				while (precedency(el) <=
-					precedency(stackarr[topp]) && topp > -1) {
-					//popping();
-					postfix[temp++] = pop(i);
-					// const list = document.getElementById("stack");
-					// const a=list.lastElementChild;
-					// console.log(a)
-					// a.style.background="black"
-				}
-				push(el);
-			}
-		}
-		else {
-			postfix[temp++] = el;
-		}
+    document.getElementById("text").innerHTML = st;
+    pop(i);
+}
+function ReverseString(str) {
 
-		// for (var i = 0; i < 1000; i++) {
+    // Returning reverse string
+    return [...str].reduce((x, y) => y.concat(x));
+}
+function InfixtoPostfixon() {
+    document.querySelector(".infixtopost").classList.add("active");
+    document.querySelector(".output").classList.add("active");
+}
+function InfixtoPrefixon() {
+    document.querySelector(".infixtopre").classList.add("active");
+    document.querySelector(".output").classList.add("active");
+}
+function InfixtoPrefix() {
 
-		// }
+    var postfix = [];
+    var temp = 0;
+    push('@');
+    // console.log(list)
+    var infixvall = document.getElementById("infixvalue2").value;
+    var code, i, len;
+    var infixval2 = ReverseString(infixvall);
+    var infixval = infixval2.replaceAll('(', '_').replaceAll(')', '(').replaceAll('_',')');
 
-	}
+    for (i = 0, len = infixval.length; i < len; i++) {
+        code = infixval.charCodeAt(i);
 
-	// Adding character until stackarr[topp] is @
-	while (stackarr[topp] != '@') {
-		// popping();
-		postfix[temp++] = pop(i);
-		// const list = document.getElementById("stack");
-		// const a=list.lastElementChild;
-		// console.log(a)
-		// a.style.background="pink"
-	}
+        console.log(infixval[i], code)
+        if ((!(code > 47 && code < 58) && // numeric (0-9)
+            !(code > 64 && code < 91) && // upper alpha (A-Z)
+            !(code > 96 && code < 123) && !infixval[i] == ')')) { // lower alpha (a-z)
+            ssize = ssize + 1;
 
-	// String to store postfix expression
-	var st = "";
-	for (var i = 0; i < postfix.length; i++)
-		st += postfix[i];
+        }
+    }
 
-	// To print postfix expression in HTML
-	document.getElementById("text").innerHTML = st;
+
+    for (var i = 0; i < infixval.length; i++) {
+        idx++;
+        var el = infixval[i];
+        // Checking whether operator or not
+        if (operator(el)) {
+            if (el == ')') {
+                while (stackarr[topp] != "(") {
+                    postfix[temp++] = pop(i);
+                }
+                // popping();
+                pop(i);
+            }
+
+            // Checking whether el is ( or not
+            else if (el == '(') {
+                push(el);
+            }
+
+            // Comparing precedency of el and
+            // stackarr[topp]
+            else if (precedency(el) > precedency(stackarr[topp])) {
+                push(el);
+            }
+            else {
+                while (precedency(el) <=
+                    precedency(stackarr[topp]) && topp > -1) {
+                    //popping();
+                    postfix[temp++] = pop(i);
+                }
+                push(el);
+            }
+        }
+        else {
+            postfix[temp++] = el;
+        }
+
+
+    }
+    while (stackarr[topp] != '@') {
+        postfix[temp++] = pop(i);
+    }
+
+    // String to store postfix expression
+    var stt = "";
+    for (var i = 0; i < postfix.length; i++)
+        stt += postfix[i];
+    st = ReverseString(stt);
+    // To print postfix expression in HTML
+    document.getElementById("text").innerHTML = st;
+    pop(i);
+}
+
+function postfixeval(){
+    var postfix = [];
+    var temp = 0;
+    push('@');
+
+    var exp = document.getElementById("infixvalue3").value;
+    for(var i = 0 ; i<exp.length; i++){
+        var el = exp[i];
+        if(! isNaN( parseInt(el) )){
+            push(el);
+        }
+        else{
+           let val1 = parseInt(pop(i));
+           let val2 = parseInt(pop(i));
+
+           switch(el){
+            case '+':
+                push(val2+val1);
+                break;
+                  
+                case '-':
+                push(val2- val1);
+                break;
+                  
+                case '/':
+                push(val2/val1);
+                break;
+                  
+                case '*':
+                push(val2*val1);
+                break;
+           }
+        }
+    }
+    st = pop(i);
+    document.getElementById("text").innerHTML = st;
+    pop(i);
+}
+
+function postfixevalon(){
+    document.querySelector(".postfixeval").classList.add("active");
+    document.querySelector(".output").classList.add("active");
 }
